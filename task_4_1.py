@@ -4,3 +4,5 @@ sec_list = []
 for i in main_list:
     sec_list.append(i * -2)
 print(sec_list)
+
+

@@ -5,6 +5,5 @@ dict = {
     'ruble':'rub'
 }
 for key in list(dict):
-    dict[key + str(len(key))] = dict[key]
-    del dict[key]
+    dict[key + str(len(key))] = dict.pop(key)
 print(dict)

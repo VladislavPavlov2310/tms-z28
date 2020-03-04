@@ -1,17 +1,19 @@
 from random import randint
+
 n = int(input('Input n: '))
 array = [randint(0, 20) for i in range(n)]
 print(array)
-aux_list = []
+aux_list = [[array[0]]]
 counter = 0
-i = 0
-for j in range(n-1):
-    while array[j + 1] >= array[j]:
+j = 0
+for i in range(1, n):
+    if array[i] > aux_list[j][-1]:
+        aux_list[j].append(array[i])
+    else:
         j += 1
-    aux_list.append(array[i:j + 1])
-    i = j + 1
-    j += 1
+        aux_list.append([array[i]])
+print(aux_list)
 for i in aux_list:
-    if len(i) >= 2:
+    if len(i) > 1:
         counter += 1
 print(counter)

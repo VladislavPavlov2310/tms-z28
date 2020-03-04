@@ -34,7 +34,8 @@ train_dict = [
 for i in train_dict:
     time_to = datetime.strptime(i['time_to'], '%m/%d/%Y %H:%M')
     time_from = datetime.strptime(i['time_from'], '%m/%d/%Y %H:%M')
-    raz = time_to - time_from
-    if raz.seconds > 26400:
+    difference = time_to - time_from
+    time_delta = timedelta(hours=7, minutes=20)
+    if difference > time_delta:
         print(i)
-        print(f'Time difference: {raz}')
+        print(f'Travel time: {difference}')

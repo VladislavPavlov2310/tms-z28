@@ -1,10 +1,7 @@
 from random import randint
 array = [randint(0, 100) for i in range(19)]
-max_elem = array[0]
+max_elem = max(array)
 print(array)
-for i in array:
-    if i > max_elem:
-        max_elem = i
 print(f'max element: {max_elem}')
 for i in range(19):
     if array[i] % 2 == 0:

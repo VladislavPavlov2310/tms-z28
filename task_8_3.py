@@ -15,5 +15,6 @@ def exp_in_row(x, eps):
 
 
 x_func = float(input('Input x in function sin(x): '))
-eps_func = float(input('Input epsilon: '))
-print(exp_in_row(x_func, eps_func))
+eps_func = [float(input(f'Input epsilon {i + 1}: ')) for i in range(6)]
+for epsilon in eps_func:
+    print(f'To epsilon {epsilon}: {exp_in_row(x_func, epsilon)}')

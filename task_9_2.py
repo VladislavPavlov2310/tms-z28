@@ -1,12 +1,9 @@
 def dict_unpacking(**kwargs):
     return kwargs
 
-# def keys(key):
-#     return key + key
 
-
-result_dict = {
-    (lambda key: key + key): value
-    for key, value in dict_unpacking(a=1, b=2, c=3).items()
+result_dict = lambda original_dict: {
+    key + key: value
+    for key, value in original_dict.items()
 }
-print(result_dict)
+print(result_dict(dict_unpacking(a=1, b=2, c=3, d=4, e=5)))

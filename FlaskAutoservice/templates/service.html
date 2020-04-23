@@ -1,0 +1,25 @@
+{% extends 'base_models.html' %}
+
+{% block title %}
+    <title>Service</title>
+{% endblock %}
+
+
+{% block thead %}
+    <tr>
+        <th> Issue: </th>
+        <th> Fix cost: </th>
+        <th> Detail id </th>
+    </tr>
+{% endblock %}
+
+
+{% block tbody %}
+    {% for service in serv %}
+        <tr>
+            <th>{{ service.issue }}</th>
+            <th> {{ service.fix_cost }} </th>
+            <th>{{ service.detail_id }}</th>
+        </tr>
+    {% endfor %}
+{% endblock %}

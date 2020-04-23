@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylsheet.css') }}">
+</head>
+
+<body class="my_body">
+    <div class="my_form">
+        {% if ch=='c' %}
+            <form action="/entity/edit/{{ ch }}{{ client.client_id }}" method='POST'>
+                <label for='name'>Name: </label>
+                <input type='text' name='name' id='name' value="{{client.name}}">
+                <label for='surname'>Surname: </label>
+                <input type='text' name='surname' id='surname' value="{{client.surname}}">
+                <label for='number'>Phone number: </label>
+                <input type='text' name='number' id='number' value="{{client.phone_number}}">
+                <input type='submit' value='Save'>
+            </form>
+        {% else %}
+            <form action="/entity/edit/{{ ch }}{{ auto.automobile_id }}" method='POST'>
+                <label for='brand'>Brand: </label>
+                <input type='text' name='brand' id='brand' value="{{auto.brand}}">
+                <br>
+                <label for='model'>Model: </label>
+                <input type='text' name='model' id='model' value="{{auto.model}}">
+                <br>
+                <label for='year'>Year: </label>
+                <input type='text' name='year' id='year' value="{{auto.year}}">
+                <br>
+                <label for='car_number'>Car number: </label>
+                <input type='text' name='car_number' id='car_number' value="{{auto.car_number}}">
+                <br>
+                <input type='submit' value='Save'>
+            </form>
+        {% endif %}
+    </div>
+</body>
+</html>

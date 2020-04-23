@@ -1,0 +1,25 @@
+{% extends 'base_models.html' %}
+
+{% block title %}
+    <title>Clients</title>
+{% endblock %}
+
+
+{% block thead %}
+    <tr>
+        <th> Name: </th>
+        <th> Surname: </th>
+        <th> Phone number: </th>
+    </tr>
+{% endblock %}
+
+
+{% block tbody %}
+    {% for client in cl %}
+        <tr>
+            <th><a href="{{ url_for('entity', client_id=client.client_id) }}">{{ client.name }}</a></th>
+            <th> {{ client.surname }} </th>
+            <th> {{ client.phone_number }} </th>
+        </tr>
+    {% endfor %}
+{% endblock %}

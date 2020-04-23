@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylsheet.css') }}" >
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>  </title>
+    {% block title %}{% endblock %}
+
+</head>
+
+<body class="my_body">
+
+    <header class="my_header">
+        <nav class="my_nav">
+            <a class="nav_link nav_link_button" href="{{ url_for('clients') }}">Clients</a>
+            <a class="nav_link nav_link_button" href="{{ url_for('automobiles') }}">Automobiles</a>
+            <a class="nav_link nav_link_button" href="{{ url_for('orders') }}">Orders</a>
+            <a class="nav_link nav_link_button" href="{{ url_for('service') }}">Fix service</a>
+            <a class="nav_link nav_link_button" href="{{ url_for('details') }}">Details</a>
+        </nav>
+    </header>
+
+    <table class="table table-hover table-dark my_table">
+        <thead>
+            {% block thead %}
+
+            {% endblock %}
+        </thead>
+        <tbody>
+            {% block tbody %}
+
+            {% endblock %}
+        </tbody>
+    </table>
+
+</body>
+
+</html>

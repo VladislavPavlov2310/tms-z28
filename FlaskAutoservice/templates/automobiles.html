@@ -1,0 +1,29 @@
+{% extends 'base_models.html' %}
+
+{% block title %}
+    <title>Automobiles</title>
+{% endblock %}
+
+
+{% block thead %}
+    <tr>
+        <th> Brand:</th>
+        <th> Model:</th>
+        <th> Year:</th>
+        <th> Car number:</th>
+        <th> Client id:</th>
+    </tr>
+{% endblock %}
+
+
+{% block tbody %}
+    {% for automobile in au %}
+        <tr>
+            <th> {{ automobile.brand }} </th>
+            <th> {{ automobile.model }} </th>
+            <th> {{ automobile.year }} </th>
+            <th> {{ automobile.car_number }} </th>
+            <th> {{ automobile.client_id }} </th>
+        </tr>
+    {% endfor %}
+{% endblock %}

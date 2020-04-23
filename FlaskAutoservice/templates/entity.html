@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/stylsheet.css') }}" >
+    <title> Client </title>
+
+</head>
+
+<body class="my_body">
+    <h1> Client info: </h1>
+    <div class="buttons">
+        <a class="entity_link" href="/delete/{{client.client_id}}">Delete</a>
+        <a class="entity_link" href="/entity/edit/{{ 'c' }}{{ client.client_id }}">Edit</a>
+    </div>
+    <p>
+        Name: {{ client.name }} <br>
+        Surname: {{ client.surname }} <br>
+        Phone number: {{ client.phone_number }}<br>
+    </p>
+    <hr class="info_hr">
+
+    <div class="auto_info">
+        {% for auto in automobile %}
+            Car brand: {{ auto.brand }}<br>
+            Car model: {{ auto.model }}<br>
+            Year: {{ auto.year }}<br>
+            Car number: {{ auto.car_number }}<br><br>
+            <a class="entity_link" href='/entity/edit/{{ 'a' }}{{auto.automobile_id}}'>Edit</a>
+            <hr class="auto_hr">
+        {% endfor %}
+    </div>
+
+</body>
+</html>

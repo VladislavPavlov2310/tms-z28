@@ -1,0 +1,27 @@
+{% extends 'base_models.html' %}
+
+{% block title %}
+    <title>Details</title>
+{% endblock %}
+
+
+{% block thead %}
+    <tr>
+        <th> Detail id:</th>
+        <th> Detail name:</th>
+        <th> Guarantee:</th>
+        <th> Detail cost:</th>
+    </tr>
+{% endblock %}
+
+
+{% block tbody %}
+    {% for detail in dtl %}
+        <tr>
+            <th> {{ detail.detail_id }} </th>
+            <th> {{ detail.detail_name }} </th>
+            <th> {{ detail.guarantee }} </th>
+            <th> {{ detail.detail_cost }} </th>
+        </tr>
+    {% endfor %}
+{% endblock %}

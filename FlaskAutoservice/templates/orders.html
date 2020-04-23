@@ -1,0 +1,25 @@
+{% extends 'base_models.html' %}
+
+{% block title %}
+    <title>Orders</title>
+{% endblock %}
+
+
+{% block thead %}
+    <tr>
+        <th> Order id: </th>
+        <th> Date: </th>
+        <th> Automobile id: </th>
+    </tr>
+{% endblock %}
+
+
+{% block tbody %}
+    {% for order in ord %}
+        <tr>
+            <th>{{ order.order_id }}</th>
+            <th>{{ order.date }}</th>
+            <th> {{ order.automobile_id }} </th>
+        </tr>
+    {% endfor %}
+{% endblock %}
